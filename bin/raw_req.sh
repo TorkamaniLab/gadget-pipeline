@@ -10,8 +10,8 @@ DATA_TYPE=$2
 
 DATA='{
         "credentials": {
-            "user": "scrippsOwner",
-            "pass": "123456"
+            "user": "my_user",
+            "pass": "my_password"
         },
         "trial": "scripps",
         "user": "'$SAMPLE'",
