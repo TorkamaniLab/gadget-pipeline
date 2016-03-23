@@ -1,4 +1,4 @@
-# RNA Seq Pipeline for Gadget PD trial.
+# Pipeline for Gadget PD trial.
 # 
 # author: Brian Schrader
 # since 2016-03-22
