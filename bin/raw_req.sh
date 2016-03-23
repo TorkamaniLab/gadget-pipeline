@@ -1,17 +1,19 @@
 #! /bin/bash
 # Sample export from Intel's FoxData Application.
-# Usage: ./<script> <sample_id> <data_type>
+# Usage: ./<script> <sample_id> <data_type> <username> <pass>
 
 
 BEGIN_DATE="2016-01-01 00:00"
 END_DATE=$(date +"%Y-%m-%d %H:%M")
 SAMPLE=$1
 DATA_TYPE=$2
+USER=$3
+PASS=$4
 
 DATA='{
         "credentials": {
-            "user": "my_user",
-            "pass": "my_password"
+            "user": "'$USER'",
+            "pass": "'$PASS'"
         },
         "trial": "scripps",
         "user": "'$SAMPLE'",

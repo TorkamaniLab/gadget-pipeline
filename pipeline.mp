@@ -9,7 +9,7 @@
 ##################################################
 
 # Retrieve the sample data
-sh $API $SAMPLE 'Pebble Accelerometer' > {o.zip}
+sh $API $SAMPLE 'Pebble Accelerometer' $USER $PASS > {o.zip}
 zcat {1.1} > {o.data.raw.csv}
 
 # Clean the data
@@ -41,7 +41,7 @@ Rscript $args$feature_TIME --feature Max_Amplitude --graph-name maxamp_per_time 
 ##################################################
 
 # Comparison with Medications
-bash $API $SAMPLE 'Took Medication' | zcat > {o}
+bash $API $SAMPLE 'Took Medication' $USER $PASS | zcat > {o}
 bash $CLEAN {17.1} {o.medication.cleaned.csv}
 bash $FORMAT_MEDS {18.1} > {o.medication.formatted.csv}
 
@@ -58,6 +58,8 @@ Rscript $args$feature_SINCE_MEDS --feature Max_Amplitude --graph-name maxamp_sin
 ## CHANGE THE SAMPLE NAME
 [PATHS]
 $SAMPLE __sample_id__
+$USER __api_username__
+$PASS __api_password__
 
 $API bin/raw_req.sh
 $CLEAN bin/fix_intel_data.sh
