@@ -33,8 +33,11 @@ done | sort | while read GAMETIME GAME_DAY GAME_TIME; do
         if [[ $GAMETIME -gt $MEDS_TIME ]]; then 
             TIMEDIFF=$(echo "( $GAMETIME - $MEDS_TIME ) / 1000 / 3600" | bc -l)
             TIMEDIFF=$(printf "%.0f\n" "$TIMEDIFF")
-            echo "$GAME_DAY $GAME_TIME $TIMEDIFF" 
-            break  
+            # Only echo back if meds are less than a day old.
+            if [[ TIMEDIFF -lt 25 ]]; then          
+                echo "$GAME_DAY $GAME_TIME $TIMEDIFF" 
+                break  
+            fi
         fi
     done;
 done | while read GAME_DAY GAME_TIME TIMEDIFF; do 
