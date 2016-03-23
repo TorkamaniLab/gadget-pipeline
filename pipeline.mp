@@ -21,7 +21,7 @@ sh $CLEAN {3.1} {o.data.cleaned.csv}
 # Preliminary Analysis
 mkdir breakdown analysis
 python $CUTTER -t 80 -i {4.1} -o breakdown/data.cut #{o:breakdown}
-cd {6.1}; ls | parallel -I [] python $FREQ_ANALYZER -i [] -o [].analyzed.csv -rne #{o:breakdown/*.analyzed.csv}
+cd {6.1}; ls | parallel -I [] python $FREQ_ANALYZER -i [] -o [].analyzed.csv -rne --filter median #{o:breakdown/*.analyzed.csv}
 
 # Energy Analysis
 bash $ENERGY_EXTRACT {7.1} > {o.extracted.energies.csv}
