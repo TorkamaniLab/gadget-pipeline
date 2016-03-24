@@ -22,7 +22,9 @@ pipeline. If you wish to run it locally, then use the following command:
 $ sh run_me.sh <sample_id> <API_USERNAME> <API_PASSWORD>
 ```
 
-To run this pipeline on an external system, like a cluster, use these commands:
+To run this pipeline on an external system, like a cluster, you'll need to edit
+the pipeline.mp file and fill in your api username, password, and sample id.
+When that is done, run your pipeline using these commands:
 
 ```bash
 $ metapipe -j pbs -o pipeline.sh pipeline.mp 
