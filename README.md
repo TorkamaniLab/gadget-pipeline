@@ -40,3 +40,5 @@ packages are in the requirements.txt.
 The overall structure of the pipeline can be found in the pipeline.mp file.
 This file contains the [metapipe-format][mp] pipeline design.
 
+
+[mp]: http://metapipe.readthedocs.org/en/latest/what_is_metapipe.html
