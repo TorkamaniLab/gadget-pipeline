@@ -1,0 +1,2 @@
+metapipe==1.2.2
+frequency_analyzer==1.0-0
